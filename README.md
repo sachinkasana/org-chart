@@ -1,10 +1,78 @@
-# Getting Started with Create React App
+# Organization Chart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An interactive organizational chart built with React and d3-org-chart library.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Interactive Visualization**: Click to expand/collapse nodes
+- **Search Functionality**: Search by name, position, or department
+- **Responsive Design**: Works on desktop and mobile devices
+- **Control Buttons**: Fit to screen, expand all, collapse all
+- **Customizable Styling**: Easy to modify colors, fonts, and layout
+
+## Getting Started
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Start the development server:
+```bash
+npm start
+```
+
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Data Structure
+
+The org chart expects data in a flat array format with the following structure:
+
+```javascript
+const orgData = [
+  {
+    id: 1,
+    parentId: null, // null for root node
+    name: "John Smith",
+    positionName: "CEO",
+    department: "Executive",
+    email: "john.smith@company.com",
+    phone: "+1-555-0001"
+  },
+  {
+    id: 2,
+    parentId: 1, // references parent's id
+    name: "Sarah Johnson",
+    positionName: "CTO",
+    department: "Technology",
+    email: "sarah.johnson@company.com",
+    phone: "+1-555-0002"
+  }
+  // ... more employees
+];
+```
+
+## Available Controls
+
+- **Search**: Type in the search box to filter employees
+- **Fit to Screen**: Auto-zoom to fit the entire chart in view
+- **Expand All**: Show all organizational levels
+- **Collapse All**: Collapse all nodes to show only top level
+
+## File Structure
+
+```
+src/
+├── components/
+│   ├── OrgChart.js              # Main chart component
+│   ├── OrgChartWithSearch.js    # Chart with search functionality
+│   └── DatasetStats.js          # Dataset statistics component
+├── data/
+│   └── expandedOrgData.js       # Comprehensive organizational data (200+ employees)
+├── App.js                       # Main application component
+├── App.css                      # Application styles
+└── index.js                     # Application entry point
+```
 
 ### `npm start`
 

@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import OrgChartWithSearch from './components/OrgChartWithSearch';
+import DatasetStats from './components/DatasetStats';
+import expandedOrgData, { transformDataForOrgChart } from './data/expandedOrgData';
 
 function App() {
+  const orgChartData = transformDataForOrgChart(expandedOrgData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header style={{ 
+        padding: '2px', 
+        backgroundColor: '#2c3e50', 
+        color: 'white',
+        textAlign: 'center'
+      }}>
+        <h1>Organization Chart - POC Demo</h1>
       </header>
+      <main style={{ padding: '20px' }}>
+        <DatasetStats />
+        <OrgChartWithSearch data={orgChartData} originalData={expandedOrgData} />
+      </main>
     </div>
   );
 }
