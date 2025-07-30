@@ -378,7 +378,7 @@ const OrgChartComponent = ({ data }) => {
             padding: '8px 10px',
             minHeight: '40px'
           }}>
-            <span style={{ color: '#fff', fontSize: '12px', fontWeight: 'bold' }}>WoodMac FTE</span>
+            <span style={{ color: '#fff', fontSize: '12px', fontWeight: 'bold' }}>Matrix FTE</span>
           </div>
           
           <div style={{
